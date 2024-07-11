@@ -1,15 +1,49 @@
+<!-- I'm going to be lazy and just copy/paste this -->
+<!-- https://github.com/mdn/learning-area/blob/main/javascript/apis/document-manipulation/shopping-list.html -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
 
-    <script src="javascript.js"></script>
-</head>
-<body>
-    <script> 
-        console.log("Hello Console!")
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+    <script src="./javascript.js"></script>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const ul = document.querySelector("ul");
+        const input = document.querySelector("input");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            let text = input.value;
+            input.value = '';
+            alert(text);
+        });
+
     </script>
-</body>
+  </body>
 </html>
