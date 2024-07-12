@@ -38,11 +38,35 @@
         const input = document.querySelector("input");
         const btn = document.querySelector("button");
 
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", () => onClick())
+        
+        
+        function onClick()
+        {
             let text = input.value;
             input.value = '';
-            alert(text);
-        });
+
+            let mylist = document.createElement("li");
+            let span = document.createElement("span");
+            let button = document.createElement("button");
+
+            mylist.textContent = text;
+            button.textContent = "Delete";
+
+            mylist.appendChild(span);
+            mylist.appendChild(button);
+            ul.appendChild(mylist);
+
+            button.addEventListener("click", () => deleteli(mylist))
+        };
+
+
+        function deleteli(mylist)
+        {
+          ul.removeChild(mylist);
+          mylist.remove();
+        }
+
 
     </script>
   </body>
